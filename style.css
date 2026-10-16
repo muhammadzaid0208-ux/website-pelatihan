@@ -1,0 +1,213 @@
+/* Ini Bagian Navbar */
+
+.nav-bar {
+    background: linear-gradient(115deg, #38452c, #4d5a39);
+    border-bottom: 1px solid rgba(245, 239, 220, 0.28);
+    box-shadow: 0 4px 14px rgba(31, 38, 24, 0.18);
+    padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
+}
+
+.nav-bar ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    min-height: 2rem;
+    padding: 0;
+}
+
+.li-navbar a {
+    color: #f2ead5;
+    display: inline-block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    font-weight: 600;
+    letter-spacing: 0.035em;
+    padding: 0.25rem 0;
+    position: relative;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.li-navbar a::after {
+    background: #d8c99e;
+    bottom: -0.35rem;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+    width: 100%;
+}
+
+.li-navbar a:hover,
+.li-navbar a:focus-visible {
+    color: #fff9e9;
+}
+
+.li-navbar a:hover::after,
+.li-navbar a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* Ini Bagian Navbar End */
+
+
+
+
+/* Ini Bagian Biodata */
+
+main {
+    align-items: center;
+    background-color: #f2ead5;
+    color: #38452c;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    min-height: 65vh;
+    overflow: hidden;
+    padding: clamp(3rem, 8vw, 5.5rem) 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+main::before,
+main::after {
+    background: rgba(56, 69, 44, 0.12);
+    clip-path: polygon(52% 0, 100% 0, 63% 38%, 86% 38%, 0 100%, 36% 54%, 14% 54%);
+    content: "";
+    height: 16rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7rem;
+    z-index: -1;
+}
+
+main::before {
+    left: clamp(1rem, 9vw, 9rem);
+}
+
+main::after {
+    right: clamp(1rem, 9vw, 9rem);
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.foto-1 {
+    border: 5px solid #38452c;
+    border-radius: 50%;
+    box-shadow: 0 8px 22px rgba(56, 69, 44, 0.2);
+    height: clamp(10rem, 25vw, 13rem);
+    object-fit: cover;
+    position: relative;
+    width: clamp(10rem, 25vw, 13rem);
+}
+
+main section {
+    margin-top: 1.75rem;
+    max-width: 42rem;
+    position: relative;
+}
+
+main h1 {
+    color: #38452c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    margin: 0 0 1.25rem;
+}
+
+main section p {
+    color: #38452c;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 600px) {
+    main::before,
+    main::after {
+        height: 10rem;
+        opacity: 0.7;
+        width: 4rem;
+    }
+}
+
+/* Ini Bagian Biodata End */
+
+
+
+
+
+
+/* Ini Bagian Riwayat Pendidikan */
+
+footer {
+    background: linear-gradient(115deg, #38452c, #4d5a39);
+    border-top: 1px solid rgba(245, 239, 220, 0.28);
+    box-shadow: 0 -4px 14px rgba(31, 38, 24, 0.12);
+    color: #f2ead5;
+    padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+    text-align: center;
+}
+
+footer > p {
+    color: #f2ead5;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 600;
+    margin: 0 0 1.75rem;
+}
+
+.riwayat-pendidikan {
+    counter-reset: pendidikan;
+    list-style: none;
+    margin: 0 auto;
+    max-width: 38rem;
+    padding: 0;
+    text-align: left;
+}
+
+.riwayat-pendidikan li {
+    align-items: center;
+    border-bottom: 1px solid rgba(242, 234, 213, 0.25);
+    counter-increment: pendidikan;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2.5rem 1fr;
+    padding: 1rem 1.25rem;
+    transition: background-color 180ms ease, padding 180ms ease;
+}
+
+.riwayat-pendidikan li:first-child {
+    border-top: 1px solid rgba(242, 234, 213, 0.25);
+}
+
+.riwayat-pendidikan li::before {
+    align-items: center;
+    background: rgba(242, 234, 213, 0.12);
+    border: 1px solid rgba(242, 234, 213, 0.38);
+    border-radius: 50%;
+    color: #f2ead5;
+    content: counter(pendidikan, decimal-leading-zero);
+    display: flex;
+    font-size: 0.8rem;
+    height: 2.25rem;
+    justify-content: center;
+    width: 2.25rem;
+}
+
+.riwayat-pendidikan li:hover {
+    background-color: rgba(242, 234, 213, 0.08);
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .riwayat-pendidikan li {
+        gap: 0.75rem;
+        padding: 0.9rem 0.75rem;
+    }
+}
+
+/* Ini Bagian Riwayat Pendidikan End */
